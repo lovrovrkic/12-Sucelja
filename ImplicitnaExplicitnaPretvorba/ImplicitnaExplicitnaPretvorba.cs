@@ -8,25 +8,27 @@ namespace Vsite.CSharp
     {
         static void Main(string[] args)
         {
-            // TODO: Provjeriti koja sučelja implementira klasa System.Collections.Queue
+            // Provjeriti koja sučelja implementira klasa System.Collections.Queue
 
             Queue<string> red = new Queue<string>(new string[] { "Mirko", "Slavko", "Jure" });
             // referiranjem na 'red' možemo dohvatiti bilo koji 
             // član iz tipa Queue ili iz baznog tipa System.Object
 
-            // TODO: Napisati naredbu koja će pomoću metode Queue<T>.Enqueue() dodati još jedan element u 'red' 
+            // Napisati naredbu koja će pomoću metode Queue<T>.Enqueue() dodati još jedan element u 'red' 
 
+            red.Enqueue("Pero");
 
-
-            // TODO: Pridružiti objekt 'red' varijabli 'obilaziv' tipa IEnumerable<string> te ispisati sve elemete pozivom metode IspišiSveElemente():
+            // Pridružiti objekt 'red' varijabli 'obilaziv' tipa IEnumerable<string> te ispisati sve elemete pozivom metode IspišiSveElemente():
             // IEnumerable<string> obilaziv = ...;
 
+            IEnumerable<string> obilaziv = red;
+            IspišiSveElemente(obilaziv);
 
-
-            // TODO: Pridružiti objekt 'obilaziv' varijabli 'kolekcija' tipa ICollection koristeći eksplicitnu pretvorbu. Provjeriti da li se kod ispravno izvodi tako da se na objektu tipa 'kolekcija' dohvati svojstvo 'Count' i ispiše broj članova:
+            // Pridružiti objekt 'obilaziv' varijabli 'kolekcija' tipa ICollection koristeći eksplicitnu pretvorbu. Provjeriti da li se kod ispravno izvodi tako da se na objektu tipa 'kolekcija' dohvati svojstvo 'Count' i ispiše broj članova:
             // ICollection kolekcija = obilaziv;
 
-
+            ICollection kolekcija = (ICollection)obilaziv;
+            Console.WriteLine(kolekcija.Count);
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey();
