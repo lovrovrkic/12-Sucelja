@@ -17,7 +17,9 @@
     // TODO: u klasi Izvedena pregazite (override) metode iz ISučelja. Provjerite poruke o pogreškama ili upozorenja prevoditelja
     class Izvedena : Bazna
     {
+        public new void Metoda() { }
 
+        public override void VirtualnaMetoda() { }
     }
 
     class Program

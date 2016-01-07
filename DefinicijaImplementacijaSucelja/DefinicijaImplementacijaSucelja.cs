@@ -21,8 +21,24 @@ namespace Vsite.CSharp
 
     // TODO: Napišite kod klase Implementacija tako da implementira sučelje IMojeSučelje. 
     // TODO: Implementirajte kod za Svojstvo i indekser tako da vraćaju neki tekst
-    class Implementacija
+    class Implementacija : IMojeSučelje
     {
+        #region IMojeSučelje Members
+
+        public void MojaMetoda(int argument)
+        {
+            throw new NotImplementedException();
+        }
+        public string Svojstvo
+        {
+            get { return "svojstvo"; }
+        }
+        public string Indekser
+        {
+            get { return "indekser"; }
+        }
+        public event MojDelegat{ }
+     
     }
 
     class Program
